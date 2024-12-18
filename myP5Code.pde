@@ -5,7 +5,7 @@ void setup() {
 }
 
 //🎯Varaible Declarations Go Here
-var eyeSize = 8;
+var eyeSize = 100;
 
 //🟢Draw Procedure - Runs on Repeat
 void draw(){
@@ -27,7 +27,7 @@ void draw(){
   line(150, 200, 250, 200);   // mouth
 
   noFill();
-  rect(185, 200, 15, 10); // left tooth
+  rect(185, 200, 15, 100); // left tooth
   rect(200, 200, 15, 10); // right tooth
   
 
@@ -51,6 +51,7 @@ void mousePressed(){
   text(myText, mouseX + 15, mouseY);
   console.log(myText);
   
+  eyeSize= random(10,500)
   
 }
 
