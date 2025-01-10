@@ -1,76 +1,68 @@
 //🟢Setup Procedure - Runs Once to Set The Canvas
 void setup() {
     size(400, 400); 
-    background(255,255,255,200);
 }
 
-//🎯Varaible Declarations Go Here
-var eyeSize = 100;
+
+
+
+//🎯Variable Declarations Go Here 
+var fireworkx = 100;
+var rectx = 53; 
+var recty = 66; 
+ var fireworkx = 20;
+var rectx = 53; 
+var recty = 66; 
+var rectsize = 20;
+
+draw = function(){
+
 
 //🟢Draw Procedure - Runs on Repeat
-void draw(){
-  fill(255,255,255);
-  strokeWeight(1);
-  background(255,255,255,200);
 
-  //💡⬇️⬇️⬇️💡 Your Code For This Unit Goes Here
+background (0,0,0,0) ;
+ 
+   if(mousePressed){
+    showXYPositions();
+    
+  }
   
-  ellipse(150, 70, 60, 120);  // left ear
-  ellipse(240, 70, 60, 120);  // right ear
-
-  ellipse(200, 170, 150, 150);    // face
-
-  fill(0, 0, 0);
-  ellipse(170, 150, eyeSize, eyeSize);  // left eye
-  ellipse(230, 150, eyeSize, eyeSize);  // right eye
-
-  line(150, 200, 250, 200);   // mouth
-
-  noFill();
-  rect(185, 200, 15, 100); // left tooth
-  rect(200, 200, 15, 10); // right tooth
+  //🎯Animation Code Goes Here
   
+  rect(fireworkx,15,10,10);
+  fill (35,39,245)
+  ellipse(rectx,recty,rectsize,rectsize*0.75);
+  
+  rectx = rectx -1;
+  recty = recty +1;
+rectsize = rectsize +.5; 
+
+if (rectx>400) {
+rectx = 108
+recty = 305
+rectsize = 20
 
 }
+  
+  rectx = recty + 1; 
+
+  
 
 
+}
 
 //🟡Extra FUN Features Ms. Hall Added
 //Proceed with Caution (and Curiosity!)
 
-var fillR = 255;
-var fillG = 0;
-var fillB = 255;
+showXYPositions = function(){
+    fill(255,255,255)
+    rect(270,300,150,100)
+    fill(0,0,0)
+    textSize(30)
+    text("x = " + mouseX + "\ny = " +mouseY, 290, 350)
+    fill(255,0,255)
+    ellipse(mouseX, mouseY, 10, 10);
+    fill(255,255,255)
+} 
 
-//🟡Mouse Pressed Procedue - Runs When Mouse is Pressed on Canvas
-void mousePressed(){
-  fill(fillR,fillG,fillB);
-  strokeWeight(1);
-  ellipse(mouseX, mouseY, 12, 12);
-  var myText = "x: " + mouseX + "\ny: " + mouseY;
-  text(myText, mouseX + 15, mouseY);
-  console.log(myText);
-  
-  eyeSize= random(10,500)
-  
-}
-
-//🟡Key Pressed Procedure - Runs When Keyboard Key is Pressed
-void keyPressed(){
-  if(key == 'c' || key == 'C'){
-    background(255,255,255,100);
-  }
-
-  if(key == 'r' || key == 'R'){
-    fillR = random(100,255);
-    fillG = 0;
-    fillB = 0;
-  }
-
-  if(key == 'g' || key == 'G'){
-    fillR = 0;
-    fillG = random(100,255);
-    fillB = 0;
-  }
-}
 
